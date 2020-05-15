@@ -1,13 +1,13 @@
 const amenities = [];
-  
+
 function checked () {
   const name =  $(this).attr('data-name');
-  if (($(this).is(':checked')) {
+  if ($(this).is(':checked')) {
     amenities.push(name);
   } else {
     deleteElement(name);
   }
-  showAmenities(array);
+  showAmenities(amenities);
 }
 
 function deleteElement (name) {
