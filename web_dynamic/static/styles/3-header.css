@@ -16,6 +16,10 @@ header .logo {
 
 /* ======================= */
 /* ** Status of the API ** */
+header .available {
+    background-color: #FF545F !important;
+}
+
 header #api_status {
     position: absolute;
     right: 30px;
@@ -23,9 +27,5 @@ header #api_status {
     height: 40px;
     border-radius: 50%;
     background-color: #CCCCCC;
-}
-
-header .available {
-    background-color: #FF545F;
 }
 /* ======================= */
