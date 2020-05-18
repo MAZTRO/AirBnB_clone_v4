@@ -9,3 +9,24 @@ body .container {
     max-width: 1000px;
     margin: 30px auto;
 }
+
+/* ================== */
+/* SCROLL BAR */
+/* ================== */
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #FAFAFA;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255, 134, 142);
+    border-radius: 2px;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF545F;
+  }
