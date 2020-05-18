@@ -70,7 +70,6 @@ function placesPostRequest(filter) {
     type: 'POST',
     success: function (data) {
       console.log("number of items found:", data.length);
-      console.log(data);
       generateTemplate(data);
     }
   })

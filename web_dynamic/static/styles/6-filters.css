@@ -59,6 +59,9 @@ button:hover {
 }
 
 .popover {
+    position: absolute;
+    top: 70px;
+    max-width: 25%;
     visibility: hidden;
     width: 100%;
     border: 1px solid #DDDDDD;
@@ -72,7 +75,7 @@ button:hover {
 }
 
 .popover::-webkit-scrollbar{
-    width: 0px;
+    width: 5px;
 }
 
 .amenities .popover {
@@ -96,6 +99,16 @@ button:hover {
 .popover ul li{
     padding: 4px;
     padding-left: 10px;
+}
+
+.popover .checkPoint input {
+  opacity: .4;
+  cursor: pointer;
+}
+
+.popover .checkPoint input:checked {
+    cursor: pointer;
+    opacity: .7;
 }
 
 .popover ul h2{
