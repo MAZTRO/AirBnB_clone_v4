@@ -23,7 +23,11 @@ function createPlaceTemplate(place) {
     )
 }
 
-/* --Refactored part for States, Cities, and Amenities--
+/* ========================================================== */
+/* ========================================================== */
+/* ========================================================== */
+
+ /* --Refactored part for States, Cities, and Amenities--
 
 function deleteElement(list, attr) {
     const index = list.indexOf(attr);
@@ -49,11 +53,12 @@ function verificateIfChecked($element, _list, list_id, name, id) {
     }
 }
 
-function newchecked() {
+function newChecked() {
     const name = $(this).attr('data-name');
     const id = $(this).attr('data-id');
     const parent = $(this).parents()[0];
-    const lastParent = parent.parentElement.parentElement.attributes.class.nodeValues;
+    console.log(parent.parentElement.parentElement.parentElement.parentElement.parentElement);
+    const lastParent = parent.parentElement.parentElement.parentElement.attributes.class.nodeValues;
 
     if (parent.localName === 'h2') {
         if (lastParent === 'locations') {
@@ -70,10 +75,14 @@ function newchecked() {
         }
     }
 }
-				--END--
-*/
 
-/* --Normal Part --*/
+--END-- */
+
+
+/* ========================================================== */
+/* ========================================================== */
+/* ========================================================== */
+/* --Normal Part -- */
 
 /* Amenity */
 function checkedAmenity() {
@@ -81,7 +90,7 @@ function checkedAmenity() {
     const id = $(this).attr('data-id');
     if ($(this).is(':checked')) {
         amenities.push(name);
-        amenityId.push(id);
+        amenitiesId.push(id);
     } else {
         deleteElement(name);
         deleteId(id);
@@ -98,9 +107,9 @@ function deleteElement(name) {
 }
 
 function deleteId(id) {
-    for (let i = 0; i < amenityId.length; i++) {
-        if (amenityId[i] === id) {
-            amenityId.splice(i, 1);
+    for (let i = 0; i < amenitiesId.length; i++) {
+        if (amenitiesId[i] === id) {
+            amenitiesId.splice(i, 1);
         }
     }
 }
@@ -111,7 +120,7 @@ function showAmenities(array) {
 /* END Amenity */
 
 
-/* State*/
+/* State */
 function checkedStates() {
     const name = $(this).attr('data-name');
     const id = $(this).attr('data-id');
@@ -157,7 +166,7 @@ function checkedCities() {
         citiesId.push(id);
     } else {
         deleteElementCities(name);
-        deleteIdSCities(id);
+        deleteIdCities(id);
     }
     showStates(states, cities);
 }
@@ -201,11 +210,11 @@ function placesPostRequest(filter) {
 }
 
 $(document).ready(function() {
-    /* Refactored part
-    $('DIV.amenities .popover LI input').on('change', newChecked);
+    /* Refactored part */
+    /* $('DIV.amenities .popover LI input').on('change', newChecked);
     $('DIV.locations .popover H2 input').on('change', newChecked);
-		$('DIV.locations .popover LI input').on('change', newChecked);
-		*/
+    $('DIV.locations .popover LI input').on('change', newChecked); */
+
     $('DIV.amenities .popover LI input').on('change', checkedAmenity);
     $('DIV.locations .popover H2 input').on('change', checkedStates);
     $('DIV.locations .popover LI input').on('change', checkedCities);
@@ -222,7 +231,7 @@ $(document).ready(function() {
 
     placesPostRequest(JSON.stringify(filter));
     $('button').on('click', function() {
-        filter['amenities'] = amenity_id;
+        filter['amenities'] = amenitiesId;
         placesPostRequest(JSON.stringify(filter));
     });
 });

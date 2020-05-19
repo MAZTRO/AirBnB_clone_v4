@@ -58,6 +58,13 @@ button:hover {
     text-overflow: ellipsis;
 }
 
+.locations div h4 {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .popover {
     position: absolute;
     top: 70px;
