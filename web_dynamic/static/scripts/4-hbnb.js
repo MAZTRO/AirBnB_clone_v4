@@ -56,7 +56,6 @@ function showAmenities (array) {
 function generateTemplate(data) {
   $('SECTION.places').empty();
   for (const x in data) {
-      //generate the html template
       const template = createPlaceTemplate(data[x]);
       $('SECTION.places').append(template);
     }
