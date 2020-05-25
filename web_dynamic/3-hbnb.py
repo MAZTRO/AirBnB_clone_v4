@@ -47,8 +47,4 @@ def hbnb():
 
 if __name__ == "__main__":
     """ Main Function """
-<<<<<<< HEAD
-    app.run(host='0.0.0.0', port=5000)
-=======
-    app.run(host='0.0.0.0', port=5000, debug=True)
->>>>>>> 115c7f916eb0b885ef8a5b37782a1ee71097e39b
+     app.run(host='0.0.0.0', port=5000, debug=True)
